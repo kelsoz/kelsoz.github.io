@@ -1,0 +1,9 @@
+title:动态电商海报设计
+subtitle:Creative & kelso at 20170623
+tag:Brand
+filter:web
+client:RYC
+tools:adobe photoshop, cinema 4d , adobe after effects
+date:2017-06-23
+content: 记一次简单的海设计流程
+

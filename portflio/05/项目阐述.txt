@@ -1,0 +1,8 @@
+title:沁园净水品牌
+subtitle:Creative by kelso 
+tag:Brand
+filter:brand
+client:沁园集团
+tools:adobe illustrator, adobe photoshop , cinema 4d
+date:2013-2014
+content:沁园集团是一家专业从事家用净水及饮水设备、民用及商用水处理设备、大型工业和特种行业用水处理设备、高档冰川水等系列环保产品的国家高新技术企业集团，成立于1998年，是世界上第一台饮水机专用净水器及世界上第一台无热胆饮水机的发明和制造厂家。

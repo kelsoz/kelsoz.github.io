@@ -1,0 +1,12 @@
+title:拼单APP
+subtitle:Creative by kelso
+tag:UI
+filter:ui_web
+client:拼单
+tools:Sketch
+date:2016-10-11
+content:一个"精致"路线的拼团类app.由于的商品数并不大,所以首页采用了单栏设计.
+值得一提的是第一版习惯性的用PHOTOSHOP开始做，但到后期和程序猿对接的时候超级不方便。具体表现在尺寸标注和元素复用上，字体样式也同样是个灾难.
+想起来之前听说SKETCH比较善长做这个，于是下了个试用版SKETCH重绘了一次，发现这货简直就是为UI而生的。效率有飞一般的提升.
+
+建议所有做UI的主力工具从PS转到SKETCH上.

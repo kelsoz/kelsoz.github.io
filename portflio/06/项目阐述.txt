@@ -1,0 +1,8 @@
+title: 兆和酒店WEB及APP视觉
+subtitle:西湖国宾馆/西子国宾馆/柳莺宾馆
+tag:Web UI
+filter:ui_web
+client:兆和酒店管理有限公司
+tools:adobe illustrator,adobe photoshop
+date:2015-07-09
+content:浙江兆和酒店管理有限公司是一家国有的从事酒店连锁经营管理的专业机构，由浙江省委警卫局及旗舰酒店杭州西湖国宾馆（五星级）、浙江西子宾馆（五星级）、杭州柳莺宾馆共同出资组建，于2009年12月在杭州注册成立。

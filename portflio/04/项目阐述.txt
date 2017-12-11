@@ -1,0 +1,11 @@
+title:拆东西系列
+subtitle: 暴走拟物风
+tag:Graphics
+filter:graphics
+client:写实风格主画面
+tools:adobe photoshop
+date:2013-12-27
+content:拆东西系列。冒似苹果已经把这种拟物风吹到了平面设计界了, 跟风一把. 
+不知道什么时候这个大潮能退,太TM费时了.  
+心得分享:  在绘制一些不规则形状的质感的时候我运用了手绘笔来涂抹光影,  而对于那些逆天的复杂形状我建议在 illustrator 里把路径画好再置入智能对象到 photoshop里加光影.  
+因为ps画矢量太低效了.
