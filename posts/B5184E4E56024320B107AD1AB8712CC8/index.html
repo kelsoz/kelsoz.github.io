@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>继续聊颜色—chapter2.色彩空间 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        继续聊颜色—chapter2.色彩空间</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                继续聊颜色—chapter2.色彩空间</h1>
+                <div class="stuff">
+                    
+                    <span>Tuesday, December 27, 2016</span>
+                    <span>字数 4047</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p><img src="/post_photo/ebb50fa3f60ed7aea2c71c2c588ad3cb.jpeg" alt=""></p>
+<p>上一章聊过了颜色的基础概念，这次我们来说一说色彩空间是怎么回事吧。</p>
+<p>在日常生活中我们经常有听说过RGB与CMYK，它们就是色彩空间的一种。为什么会有色彩空间这么一个东西呢？ 就好比灯有瓦数有流明作为单位，长度有厘米分米公里英里光年作为单位，那么想表述某一种颜色当然也必然会有其相应的『单位』。那么决定这个『单位』或者『制式』的就被我们称为色彩空间。
+色彩空间有很多种，这里我只讲最常用的4种：RGB，CMYK，LAB和Pantone。每种色彩空间都有其特定善长的适用空间。</p>
+<p><img src="/post_photo/c38c0b48236a2eb107d0385ebf46e208.jpeg" alt=""></p>
+<hr>
+<p><strong>RGB</strong>
+所有发光屏幕上适用的色彩空间就是RGB。RGB是一个加色模型。就是说每个像素可以发出不同颜色的光，不同颜色的光叠加在一起之后会变亮。</p>
+<p><img src="/post_photo/38aff3e622439de1f3865ac5d8b81b17.jpeg" alt=""></p>
+<p>这也是上一章所讲的，绿+红=黄的原理。而且原色加在一起不止色相会变，亮度也会增加。当三原色都加在满了之后光就变成白色了。这些都是一些太基础的知识这里就不多讲。</p>
+<p>特别说一下aRGB和sRGB。虽然RGB定义了一种以三原色叠加表述颜色的方式，但是真正落实到设备上，我们发现无论我们的手机还是显示器都没办法能完整的显示1670万色，那么我们必定要对颜色进行一定的取舍。**也就是说在显示器显色范围一定的情况下我们要决定用它们来显示哪些颜色。**下图左到右的三角形分别是 sRGB、AdobeRGB 和 ProPhotoRGB的色彩范围（ProPhotoRGB用的比较少暂时跳过）。</p>
+<p><img src="/post_photo/bd2c7161ae25305e858d502f349bc374.jpeg" alt=""></p>
+<p>在图上我们明显可以看到，sRGB的色彩范围是最小的，能显示的颜色也是最少的。那么为什么不干脆用aRGB甚至ProPhotoRGB呢，为什么如今互联网上通用的反而是最小的sRGB颜色模式？
+答案与量化有关。如果您只有 8 位(256 级)来编码每个频道，那么范围越大，每个值之间的阶差越大。阶差越大意味着捕获的颜色和存储的颜色之间的误差越大，对于某些颜色，这是一个大问题。其结果是，关键颜色，如皮肤颜色非常重要，即使很小的误差也会让未经训练的观看者注意到照片上有地方看起来不对劲。
+如果上面的话不好理解，我用一个不太适当的比喻来说明这个问题：你去自助餐里胡吃海喝，餐厅里的食物种类（RGB完整色域）有很多很多，但你能吃下的的东西（显示器能显示的色域）有限。你是好吃不好吃都平均的吃，还是更多的吃你喜欢的那几种？
+所以范围越大，每个值之间的阶差越大。终极结论：前期摄取素材尽可能用范围大的aRGB，因为输入数据并不受到显示器的限制，更大的范围有更多的后期操作空间，但是输出人别人看的时候请转成sRGB。</p>
+<p><strong>HSB</strong>
+顺带说一下HSB：</p>
+<blockquote>
+<p>HSV (色相hue, 飽和度saturation, 明度value)，也稱HSB (B指brightness)是藝術家們常用的，因為與加法減法混色的術語相比，使用色相，飽和度等概念描述色彩更自然直觀。HSV是RGB色彩空間的一種變形，它的內容與色彩尺度與其出處——RGB色彩空間有密切聯繫。
+HSL (色相hue，飽和度saturation，亮度lightness/luminance)，也稱HLS或HSI (I指intensity)與HSV非常相似，僅用亮度（lightness）替代了明度（brightness）。二者區別在於，一種純色的明度等於白色的明度，而純色的亮度等於中度灰的亮度.
+简单来说，HSL和HSB都是一种将RGB色彩模型中的点在圆柱坐标系中的表示法。因为RGB的这三种颜色分量的取值与所生成的颜色之间的联系并不直观。HSL或者HSB就是用一种更直观的方式来表达RGB的颜色。
+它用色相，明度，饱和度来表示一种颜色。这与我们上一章所讲的概念非常吻合。所以当我们在拾色器里的需要把当前颜色调亮一点，调艳一点，偏红一点或者偏蓝一点，可以非常直观的操作。在illustrator里用HSB的颜色滑杆比较方便。</p>
+</blockquote>
+<hr>
+<p><strong>CMYK</strong>
+相对应的，所有印刷出来的制品都是用CMYK色彩空间。纸上所有的颜色都是通过油墨一层一层印上去的，油墨每印一层颜色就更暗一分。到最后CMY都印满了100%就变成黑色了。这就是大家所说的减色原理。</p>
+<p><img src="/post_photo/591a1ce361e93b01d32ee3f131989604.jpeg" alt=""></p>
+<p>为什么是CMYK？细心一点的朋友可以发现，在色轮中，C青色的对面就是R红色，M洋红的补色就是G绿色，Y黄色的补色就是B蓝色。CMY-RGB。K是指一个单独的黑色，它存在的原因是由于技术限制，人们在印刷中发现把CMY印在一起之后得到的黑并不够黑，加上黑色在印刷中用使用频率的太高了，与其用三种油墨去印三层还不如我们直接用一个黑的专色来印，效果又好又省钱。BINGO！</p>
+<p>顺便一提，有很多设计新手会被提醒CMYK色域不如RGB广，RGB转CMYK会变暗淡。这话对也不全对，因为RGB以确覆盖了大部分CMYK的色彩，但是『黄色』除外，CMYK里的黄色超出了RGB色域的。也就是说，RBG所能表达的颜色里，最亮最艳的黄，也达不到CMYK里的黄。 仔细想想也很正常，现实生活中，黄色本来就是比白色更亮，而RGB里最亮的就是白色，RGB里任何的黄色都比纯白色更暗。</p>
+<hr>
+<p><strong>LAB</strong></p>
+<p>设计中LAB是个很有用的色彩空间，特地解说一下。</p>
+<p>LAB表示<strong>颜色-对立空间</strong>，带有维度L表示亮度，a和b表示颜色对立维度。具体规范借用度娘的话：</p>
+<blockquote>
+<p>a表示从洋红色至绿色的范围，b表示从黄色至蓝色的范围。L的值域由0到100，L=50时，就相当于50%的黑；a和b的值域都是由+127至-128，其中+127 a就是红色，渐渐过渡到-128 a的时候就变成绿色；同样原理，+127 b是黄色，-128 b是蓝色。所有的颜色就以这三个值交互变化所组成。例如，一块色彩的Lab值是L = 100，a = 30, b = 0, 这块色彩就是粉红色。
+下面用人话来说说它的优点。我认为最大优点在于颜色与明度的分开表示，具体来说，
+1.当你调整明度的时候不影响颜色，调整颜色的时候不影响明度。这在RGB里很难做到。试想对颜色饱和度和色相的调整都不会影响到明度，那就可以放心的拉数值而不必担心画面被烧焦了。
+2.由于人们对明度的敏感远远大于对颜色的敏感，所以LAB对那些有很多色彩噪点的处理往往有奇效——而且操作简单到要命，只要在LAB模式下高斯模糊ab两个通道就OK了。
+3.色域。Lab的色域大到几乎覆盖了所有颜色，甚至一点现实中不存在的假想颜色都能表示出来（不过想想也没什么用，又显示不出来也从未见过）。这在对一些不同色彩空间和工作流程衔接的时候可以用LAB来作为中转色域，避免转换过程中丢失颜色。</p>
+</blockquote>
+<p><img src="/post_photo/06cf5e28d5fec1a00b56815660c32b76.jpeg" alt=""></p>
+<p>像这种红车变绿车的情况，在RGB里一不小心就焦掉了，而在LAB只要把a通道曲线首尾对调一下两秒就完美实现。</p>
+<hr>
+<p><strong>Pantone</strong></p>
+<p>潘通颜色，也是我们设计中使用频繁的一个色域。但是这个色域有点特别，它是Pantone（潘通/彩通）公司定义并销售一系列专色油墨。并且提供一整套色彩管理方案。在印刷中，如果我们对颜色精度要求非常高，但是工业机器都会有它自身的误差存在。 也就是说每种不同品牌的印刷机甚至每台不同的机器印出来的CMYK调和的颜色都有非常微小的差别。</p>
+<p><img src="/post_photo/c3f5c1bf04019123590f2930021643d4.jpeg" alt=""></p>
+<p>此时，Pantone 的色彩管理方案就提供了无数精确定义的颜色（成千上万个），保证你说我们的logo是这个绿色，但是你印出来的颜色怎么有一点点偏蓝这种情况出现。并且Pantone色卡里有很多颜色超出了一般的 CMYK 色域。</p>
+<p>怎么用？嗯，它是个商业公司，我表示如果手上没有它们公司出品的色卡，几乎没法用（买买买）。有些同学习惯到网上下载一些pantone色卡放到illustrator或者photoshop里来当色板用。嗯，反正你屏幕上显示的颜色和真正印出来的颜色又不一样，意义何在呢？唯一的作用就是当你被告知某个logo是某个pantone色值，然后在Pantone色板里选用它保证是同一个颜色而已。（一般提供logo的对接方肯定会提供源文件也不需要自己选色）</p>
+<hr>
+<p>色彩空间讲完了，最后科普一下色彩密度（位数）。
+我们在PS里常常能看到图像有8位，16位，32位的不同模式。具体来说应该称为：8位/通道，16位/通道，32位/通道。这里的8，16，32是用的计算机二进制语言。用人话来话就是：每个相素可以表示多少种颜色。</p>
+<p>我们知道计算机只认二进制，也就是说每个单位数据只能表示两种可能：0和1. 简单来说就是开和关。那不够用怎么办，只能用更多的单位来表示一个值了。比如说两个单位就有：a开b开，a开b关，a关b开，a关b关这四种可能，也就是2的2次方。三个单位就可以表示2的三次方也就是8种可能。以此类推，8位/通道就是每个像素用8个单位来表示，2的8次方就是256了。</p>
+<p>所以在单个通道里（黑白图像）只有256级亮度。而在RGB彩色图像里，由于每个颜色用R、G、B三个通道叠加在一起表示（所以也叫8+8+8 = 24位真彩色），所以一共有256X256X256= 16777216种颜色可以显示。通常而言这些颜色在web显示中已经足够用了。</p>
+<p>但是有些情况下，通常是当一张图遇到了设计师的时候。颜色就不够用了。比如我觉得我拍的花儿不够红，于是想拉拉曲线把它变红一点，但是由于是8位图像（而且加上jpg是个有损压缩格式），颜色过渡不够密，我把饱和度拉得太开了就会出现我们喜闻乐见的『颜色断带』。用一个比喻来说明这个问题：你某宝上买了一件毛衣，但是毛衣的毛线太省了，每次穿衣服拉扯的时候，毛衣就会被拉成渔网。我们就说这个毛线的密度不够。</p>
+<p>所以，在大部分情况下，建议所有的设计师拍片的时候全部用16位甚至32位（如果设备支持）来摄取素材。可以给你们后期带来巨大的便利。还有个小误区，有人认为16位只比8位大一倍嘛，也没多少。呵呵呵，2的8次方=256，2的16次方是65536，2的16次方再开3个通道是281474976710656，16位颜色总数是8位图像的16777216倍！倍！倍！
+当然，有优点就有缺点，更高的位数就代表更多的信息。随之而来的就是文件体积成倍的增加，电脑的运算速度成倍的变慢。而且在16位下有部分滤镜不能用，32位下大部分滤镜和调整层都不能用（此时推荐在ACR里调整）。</p>
+<hr>
+<p>预告：基础概念讲得差不多了，下一章我们进入正题说说配色。</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://dlmao.com/posts/737A80288B944AB6BC7DCF635E6BB662/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://dlmao.com/posts/74651A0025FC4A8F8DB18F3187B12B72/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

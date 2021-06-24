@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on 大脸猫</title>
+    <link>https://dlmao.com/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on 大脸猫</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 28 Jan 2017 21:27:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://dlmao.com/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在群晖214play上安装Resilio Sync</title>
+      <link>https://dlmao.com/posts/D7116BA52B1047F89A49C52D9A99AADD/</link>
+      <pubDate>Sat, 28 Jan 2017 21:27:10 +0000</pubDate>
+      
+      <guid>https://dlmao.com/posts/D7116BA52B1047F89A49C52D9A99AADD/</guid>
+      <description>上一篇刚刚写到群晖家的APP做的烂，已弃用cloud staion转到Resilio Sync。那么就把</description>
+    </item>
+    
+    <item>
+      <title>磨皮这件小事</title>
+      <link>https://dlmao.com/posts/E59E57A0CA0F4099A85841EA7C92EF9E/</link>
+      <pubDate>Tue, 10 Jan 2017 14:40:49 +0000</pubDate>
+      
+      <guid>https://dlmao.com/posts/E59E57A0CA0F4099A85841EA7C92EF9E/</guid>
+      <description>作为一个懒癌症晚期患者，磨皮这件小事我一般都交给插件去做。但是作为一个设计师，有时候磨皮这件事还真绕</description>
+    </item>
+    
+    <item>
+      <title>还是聊颜色—chapter3.易用的配色技巧</title>
+      <link>https://dlmao.com/posts/74651A0025FC4A8F8DB18F3187B12B72/</link>
+      <pubDate>Wed, 28 Dec 2016 21:44:25 +0000</pubDate>
+      
+      <guid>https://dlmao.com/posts/74651A0025FC4A8F8DB18F3187B12B72/</guid>
+      <description>配色的评判标准 说起配色，就势必要先讨论一个问题：究竟什么样的配色才算是一个出彩的配色？我们如何去判断</description>
+    </item>
+    
+    <item>
+      <title>kelso聊颜色-chapter1.基本概念</title>
+      <link>https://dlmao.com/posts/737A80288B944AB6BC7DCF635E6BB662/</link>
+      <pubDate>Mon, 26 Dec 2016 22:51:20 +0000</pubDate>
+      
+      <guid>https://dlmao.com/posts/737A80288B944AB6BC7DCF635E6BB662/</guid>
+      <description>网上关于颜色的教程多如牛毛，也不想再去写什么关于配色的教程；而且对于配色我自己也算是菜得可以哪有什么</description>
+    </item>
+    
+    <item>
+      <title>Mavericks GM 版下载与安装教程</title>
+      <link>https://dlmao.com/posts/9568BFF88520C4CB7855BE8D3BD8E4C6/</link>
+      <pubDate>Sat, 05 Oct 2013 22:31:39 +0000</pubDate>
+      
+      <guid>https://dlmao.com/posts/9568BFF88520C4CB7855BE8D3BD8E4C6/</guid>
+      <description>Mavericks GM 版终于出了，根据以往版本的惯例，不出意料正式版将和 GM 版是同一个版本。 ——2013.10.23—–</description>
+    </item>
+    
+  </channel>
+</rss>

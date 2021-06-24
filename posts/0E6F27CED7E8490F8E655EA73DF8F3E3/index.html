@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>surge for mac切换配置workflow[alfred] &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        surge for mac切换配置workflow[alfred]</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                surge for mac切换配置workflow[alfred]</h1>
+                <div class="stuff">
+                    
+                    <span>Tuesday, March 1, 2016</span>
+                    <span>字数 860</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p><img src="/post_photo/98f0d99db69b148a8eaa4667eddb861f.jpeg" alt=""></p>
+<p><strong>1.surge是什么？</strong></p>
+<p>原作者说，surge是一个网络调试工具。但是大家通常用它来翻土啬，可以完美解决未越狱ios访问外网问题。分ios版和mac版，知道的无需多介绍，不知道了介绍了也没用——这货现在已经下架了。</p>
+<p><strong>2.这个workflow用来干什么？</strong></p>
+<p>众所周知的原因，很多网址我们都是上不去的，解决方案就是VPN或者ss。但是ss服务商也很难有一个很稳定的。所以肯定要有两手准备，当A出问题的时候能切换到B。介于天朝的网络环境，这将会是一个很频繁的操作。</p>
+<p>注：surge的ios版支持icloud同步，这代表着可以让ios版的配置文件保持和mac版的同步。</p>
+<p><strong>3.实现原理</strong></p>
+<p>在网上找到了id为goodbest写的一个版本，原理是搜索配置文件名然后把文件软链接到/.surge.conf，通过修改这个软链来实现配置切换。 嗯，awesome!</p>
+<p>但是他的那个workflow有几个缺点：需要手动输入配置文件名来查找配置文件，而且无法显示当前使用的是哪个配置文件。</p>
+<p><strong>4.改进版</strong></p>
+<p>通过监控surge icloud同步文件夹来猎取配置文件，并且检查当前软链接的原身来确定当前使用的配置文件。把原来的步骤更加的简化。</p>
+<p><strong>5.食用方法</strong></p>
+<p>下载workflow文档，双击安装。然后打开workflow的路径里的sgconfg.py，修改下面两个路径为你mac的路径。（file_path为icloud配置文件所在目录，surge_conf_path是surge for mac 配置文件所有目录。一般来说，把”kelso”字段改成你的user名就可以正常使用了。）</p>
+<pre><code>file_path = ‘/Users/kelso/Library/Mobile Documents/iCloud~run~surge/Documents/’
+surge_conf_path = os.path.realpath(‘/Users/kelso/.surge.conf’)
+</code></pre><p>OS X El capitan 测试通过，其他版本未测试。<a href="http://7jpsao.com1.z0.glb.clouddn.com/SurgeConf%20Switcher.zip">点击下载</a></p>
+<hr>
+<p>后记：新版本的surge已经可以把所有配置写进同一个文件，并且自动检测哪个连接速度最快（autogroup功能），所以这个东西已经没有存在的必要了。</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://dlmao.com/posts/BC6BE49928DB41F3BDAC3B8A8FBE2812/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://dlmao.com/posts/73070E55BBD14A5699829FEE8750AF00/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

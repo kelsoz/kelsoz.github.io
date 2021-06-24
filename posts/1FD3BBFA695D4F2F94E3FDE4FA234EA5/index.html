@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>群晖的软件啊 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        群晖的软件啊</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                群晖的软件啊</h1>
+                <div class="stuff">
+                    
+                    <span>Saturday, January 28, 2017</span>
+                    <span>字数 2230</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p><img src="/post_photo/01ff396cd1d800b68286011826cb2f58.jpeg" alt=""></p>
+<p>不知道为什么大家一直普遍认为NAS里群晖家的软件做的好。入手214play一年多，实际使用下来，大部分群晖的软件做得很烂。基本上只有Cloud Station能凑合使用。</p>
+<h2 id="synology-cloud-station">Synology Cloud Station</h2>
+<p>最近决定把cloud staion替换成Resilio Sync，因为BUG太烦人了。作为一个同步/备份软件，我认为最好的状态就是尽可能的稳定，尽可能的低调。其他所谓的UI、性能、文件增量备份我都不强求了，但是这一两年用下来看，BUG之多还是不能忍。</p>
+<p>有一次我给Tina划了一个用户，把她这几年的文件在NAS里都存放设置稳妥。就等她在公司里安装一个Synology Cloud Station客户端就好了。本以为这么简单的事情不可能出错。结果同步开始后，忽然发现把所有目录都默认放过去了，于是赶紧先暂停取消重新设置， BUG来了，同步无法中断或暂停，然后把多余的文件在客户机上删掉，两秒钟之后又回来了。
+嗯，所以被嫌弃现在Synology Cloud Station只有我一个在用。</p>
+<p>一个人用就一个人用吧，省心省事。我的工作流程全是在Mac平台，Mac上有个贴心的功能，就是文件成组快捷键，类似Ps里的commad+G功能，结果我每次用这个操作Synology Cloud Station都会在我目录下生成两个相同的文件夹。
+另外，快速的重命名一个文件夹之后，马上会出现两个文件夹：重命名之前的和重命名之后的。虽然不是100%机率，但这么久用下来算算，每天应该都有那么个五六次。这点是最无法接受的。</p>
+<p>改用Resilio Sync吧，缺点就是免费版只能同步10个文件夹。但是每个文件夹内的内容不限制。增量备份都有了，知足了。</p>
+<h2 id="photo-station">Photo station</h2>
+<p>话说除了文件同步之后，NAS的另一个主要功能就是备份和查看照片了。
+先说NAS端，不知道是不是因为214 play的性能不足还是另有原因，Photo station的使用体验渣得翔一样。我里面的照片大约有个两三千张吧，每次用Photo station来查看照片都得卡上好几秒甚至十几秒。另外Web的UI与操作体验极差。用了Google Photo之后就再也不想碰这玩意儿了。
+看到网上有同学也在吐槽Photo station代码渣，甚至还有自己行优化php代码教程。可见一斑……
+ios端Ds photo；我现在只用它来备份照片，至于用它来看照片？ 洗洗睡吧。UI丑到极致，操作流程反人类，优化渣。</p>
+<h2 id="photo-station-uploader">Photo station Uploader</h2>
+<p>Photo station Uploader for Mac 失效了两百年了群晖你知道不？没有了这个组件，只能由NAS自己来转换照片了。</p>
+<h2 id="video-station">video station</h2>
+<p>video station同样也是渣。现在基本已经弃用，
+由于我们上下行不对等的网速，外网基本上就告别连NAS看电影了。在内网下，任何一个本地播放器直接播放NAS里的影片，吊打video station。
+ios端DS video；基本上不可能在外网看NAS里的高清电影。在内网里，任何一个IOS免费播放器连NAS播放都能吊打Ds video：卡、不支持某种音频解码、UI丑、操作逻辑混乱。</p>
+<h2 id="audio-station">Audio Station</h2>
+<p>Audio Station不出所料也是个渣。我有大量的歌都放在NAS里，听歌的场景基本是用iPhone，但是ios端的Ds Audio几乎没法用。UI丑陋已是群晖的标配这里就不再多说了，歌曲管理与分类反人类；手动编辑播放列表反人类；歌单反人类；这个APP应该丢去喂狗。在内网下本想用itunes来访问其共享库，发现只有只读权限。 无法编辑，无法打分。嗯，还是老老实实用网易云音乐吧。</p>
+<p>我现在只用它来干一件事，分享一些自己的音频给朋友们临时听听。</p>
+<h2 id="note-station">Note Station</h2>
+<p>Note Station 都不想再提，比evernote差了一万条街。</p>
+<h2 id="download-station--cloud-sync">Download Station &amp; Cloud sync</h2>
+<p>意外的这个下载器和网盘同步倒是很好用。
+下载器因为使用场景基本都是远程操作：chrome有个插件可以直接添加下载任务，再在同步目录里放一个种子监视文件夹，有种子就往里面丢就可以了。它会自动下载，不用再操心了。
+Cloud sync 用来同步dropbox，和百度渣盘。</p>
+<h2 id="其他">其他</h2>
+<p>由于万恶的电信不开放80端口，于是申请了一个ssl证书装了上去想改用443端口。悲剧的是，每次重启NAS后都得再装一次。家里的NAS被设定为每天深夜关机，早上再开机。 所以这个BUG导致SSL基本没法用。在网上找了很多办法都不行， 于是我还天真的去联系群晖的技术支持。</p>
+<ul>
+<li>第一天：给他们发邮件，说明SSL问题，表示这个可能是普遍问题。</li>
+<li>第三天：接到群晖邮件，要求我提供某个日志文件，他们可以分析问题；</li>
+<li>五分钟之内我就给他们回了。</li>
+<li>第六天：收到回复，要求提供我的用户名以及密码，他们要远程登录。</li>
+<li>三分钟之内我回复了他们。</li>
+<li>第九天：收到回复，表示登不上。</li>
+<li>TMD再也不想联系什么鬼售后了。不用SSL好了。</li>
+</ul>
+<p>现在的方案是: 用Resilio Sync来代替Cloud Station。cloud sync来sync dropbox的文件，目录放到Resilio Sync里给其他所有的设备用步。
+dropbox 》Resilio Sync 》各个电脑
+这样的话，在其他电脑上就不用装dropbox了。嗯，实际用下来挺省事，机智！记得在路由器里设一个全局ss。</p>
+<hr>
+<p>更新:
+今天把photo station 套件给删除掉了,竟然发现系统整体运行速度快了不少,连那些一点也不好用的套件比如video station什么的也变好特别好用了起来~   看来应该是我的相片太多了, 而photo station 套件写的太烂了, 所以拖慢了整个系统.</p>
+<p>这里要指出的是:并不是只有在转换照片的时候才会慢,而是只要装了photo station 就会变得特别卡,具体表现为在资源监控&gt;磁盘利用率和存储空间一直居高不下&hellip; 删掉photo station之后症状消失.</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://dlmao.com/posts/0900295682AB4CFABC7054828F801443/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://dlmao.com/posts/D7116BA52B1047F89A49C52D9A99AADD/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+
