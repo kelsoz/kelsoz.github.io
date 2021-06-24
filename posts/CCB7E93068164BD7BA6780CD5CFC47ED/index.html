@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>WNDR4300 折腾 openwrt 记 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        WNDR4300 折腾 openwrt 记</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                WNDR4300 折腾 openwrt 记</h1>
+                <div class="stuff">
+                    
+                    <span>Friday, September 19, 2014</span>
+                    <span>字数 1455</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p><img src="/post_photo/8c30c22544d44b8cec248224f2c6dc2f.jpeg" alt=""></p>
+<p>半个月前手贱在某东买了个千兆路由器，因为那时候刚好 openwrt 官居网开始为 WNDR4300 支持固件了，刚好看到某东在促销就 399 入手，本以为检到了便宜，但是买的还是不如卖的精啊，过了十天，它只卖 299！ 虽说这事也没什么好说的，但是终归心里有点不爽～</p>
+<p>好了，言归正传。网件 WNDR4300 官方固件自带了 bt 下载器和 USB 网络共享功能，一般用户也算够用。但是本着不折腾不舒服斯基的精神，我还是把它刷成了 openwrt 固件。</p>
+<blockquote>
+<p>OpenWrt is described as a Linux distribution for embedded devices.
+Instead of trying to create a single, static firmware, OpenWrt provides a fully writable filesystem with package management. This frees you from the application selection and configuration provided by the vendor and allows you to customize the device through the use of packages to suit any application. For developer, OpenWrt is the framework to build an application without having to build a complete firmware around it; for users this means the ability for full customization, to use the device in ways never envisioned.</p>
+</blockquote>
+<p>我的基本需求是：</p>
+<ul>
+<li>把所有的电影都统一放到移动硬盘里，通过路由支持流媒体播放，这样我家里所有的设备（PC，MBP，IPHONE，IPAD）都能流畅的播放路由里的电影</li>
+<li>Goolge不能用啦，在路由器里装上 shadowsocks，并自动分流国内线路，这样家里所有的设备都可以直接翻墙……啦啦啦……</li>
+<li>远程下载，想看什么电影，要下什么东西，用手机给添加一条任务，路由器自动下载到硬盘，回家任意一台设备都能看</li>
+<li>Time Machine ，给家里的 macbook  pro自动备份，这样就不用把硬盘接到 笔记本上啦啦啦</li>
+<li>如果稳定性可以的话把大脸猫放进我们家路由器，再也不受这些主机商的气了……</li>
+</ul>
+<p>虽然 openwrt 官网已经有详细的百科，由于头一次玩 openwrt，我觉得还是从头讲起吧，方便给同样是新手的朋友作个参考。</p>
+<p><strong>刷入固件</strong></p>
+<p>WNDR4300 到手之后的第一件事情当然就是把路由的系统刷成 openwrt 的固件，固件在<a href="http://downloads.openwrt.org">这里</a> 有下，务必在列表里寻找到 WNDR4300 的固件再刷，否则路由器变砖不要找我……
+给出步骤：</p>
+<ul>
+<li>至今20140919 最新的WNDR4300 的<a href="http://downloads.openwrt.org/barrier_breaker/14.07-rc3/ar71xx/nand/openwrt-ar71xx-nand-wndr4300-ubi-factory.img">固件</a> 直接下载它，</li>
+<li>进路由器界面，找到『固件升级』，然后上传这个包点确定。路由器就会自动刷成 openwrt 固件，等待它重启后再连路由器就大功告成了。</li>
+<li>下载<a href="http://downloads.openwrt.org/barrier_breaker/14.07-rc3/ar71xx/nand/openwrt-ar71xx-nand-wndr4300-squashfs-sysupgrade.tar">升级包</a>稍后在 openwrt 系统里给升级。</li>
+</ul>
+<hr>
+<p><strong>基础设置</strong></p>
+<p>新的 openwrt 固件默认是不开 wifi 的，所以第一次你得用网线连上路由器，进去后应试能看到 luci 界面，这里会让你输入密码，用户名默认是 root，此时密码还是个空的，随便输一个回车进回界面，如果你看到全是英文的，别担心，我们一步步来：</p>
+<ul>
+<li>先设置一密码吧，直接点 luci 界面上面的警告条后进入密码设置界面，输入一个你自己的密码，顺便把下面的 远程ssh给勾上。</li>
+<li>让你的路由器连上网，按顶部菜单栏进入net-interface选择你的接口，通常是 WAN 口，点旁边的 eidt，然后选择 ppope，点切换，然后输入你的宽带帐号和密码，然后应用。 此时你的路由已经能上网了。</li>
+<li>切换成中文界面，进入 system-software，点update，然后在 filter 里输入chinese,它会搜索带 chinese 的 ipk，找到一个名带 chinsese 之类的包之后点 install安装。完成之后到 system 里切换一下语言包就就成了中文。</li>
+<li>把 WIFI 打开，此时你的界面应该已经是中文了，进入网格-无线设置页面，把两个频段都打开，有一些要注意的地方是：加密请选强制 AES，带完请选强制 40MHZ，地区推荐选 TW，有朋友的无线速度慢就是因为这里没有设置好。</li>
+</ul>
+<p>嗷忘了一件事儿，在系统-备份/升级里把上面我们下的第二个包刷进去……推荐不勾选保留设置，因为我勾选了之后升级出现了各种问题。但是这样的话升级之后就得再次设置一次。</p>
+<p>此时，你的路由器已经刷好了 openwrt，并且可以正常使用。后面的文章我会推荐一些第三方的固件，因为官网的固件虽好，但是有一个无法忍受的问题：WNDR4300 有 128M 的内存和 128M 的 flash，但是官网的固件刷完只能用 12M！！！这么明显的问题你们搞代码的不知道嘛～～！！！</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://www.dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.dlmao.com/posts/1934BA2FE29A4840B7DB3DB2D3E49F4C/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://www.dlmao.com/posts/C2266BF672D64528A8F5077906D80FAE/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

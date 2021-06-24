@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>小米盒子 3 Root &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        小米盒子 3 Root</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                小米盒子 3 Root</h1>
+                <div class="stuff">
+                    
+                    <span>Saturday, January 14, 2017</span>
+                    <span>字数 1864</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p><img src="/post_photo/b86a605bb892e98fe2ce143232a6bbec.jpeg" alt=""></p>
+<p>家里有一个小米盒子，一个 apple TV3。本来日常的需求也算是满足了，但是还有一些小问题：首先是小米盒子的广！告！太！多！了！多到什么程度呢？ 母上大人在看电视的时候竟然学会了一招绝学：点播电视的时候看到广告 120 多秒立马退出，再点进去，如此一直反复只到广告随机变成 30 多秒的时候再开始看。我只能用四个字来形容小米了：</p>
+<p>丧心病狂。</p>
+<p>其次是 apple tv3 本身并不支持 DMI-CEC 功能，也就是说平时我还是用小米来看电视，一但要 airplay 的时候，手机上要切换到 apple tv 的同时 sony 电视上也得切换到 apple tv 的输入端口。这个是 apple TV3 硬件上的限制看来这个是无解的了。(apple TV 4可破)</p>
+<p>下面就说说小米盒子 3 怎么 root 以及 root 后怎么去广告吧，折腾了我一下午。准备工作：</p>
+<ul>
+<li>公对公 USB 线一条</li>
+<li>大于 1G 的 U 盘一个</li>
+<li>刷机固件</li>
+<li>KingoRoot 及任意安卓管理器一个（推荐豌豆荚）</li>
+</ul>
+<h2 id="公对公-usb-线">公对公 USB 线</h2>
+<p>首先这个公对公的 USB 线就难到我了，所谓公对公也就是两头都是 USB 接头的线。我找了半天在家里找出了两根 USB 延长线，想了想反正放在那也用不着，一狠心就把它们剪了对接起来。USB 线里面有四根芯，分别是：红、黑、白、绿。顺序上没什么讲究，相同的颜色绑一起就好了。如图，原谅我这手殘党。</p>
+<p><img src="/post_photo/0825282277c36ca1ed63f38fbe519bf7.jpeg" alt=""></p>
+<p><img src="/post_photo/1dae4250f154afd5ad0b5a806f11661d.jpeg" alt=""></p>
+<p>看上去糙得不行，但是用起来没问题。有了它，我们就可以把小米盒子 3 和电脑连起来了。</p>
+<h2 id="固件下载">固件下载</h2>
+<p>Root 的总思路是：先把小米盒子降级到1.3.106版本，然后在这个版本的基础上进行 root。
+所以我们需要一个小米盒子的1.3.106版本固件，已经给你们准备好了，<a href="https://pan.baidu.com/s/1mi0QEeO">点击下载</a> 密码: 3dhw  同时你会发现里面还有一个名为 kingoRoot.exe 的工具，下过来备用。
+下载完了之后，拿一个大于 1G 的 U 盘。格式化为 fat 或者 fat32 格式，把下载完之后的文件都放到 U 盘里。然后再在 U 盘里新建一个名为：xiaomi_debug 的空文件（新建一个文本文件然后重命名为xiaomi_debug，注意不要有后缀）至此，U 盘里的文件列表应该如下：</p>
+<ul>
+<li>update.zip</li>
+<li>xiaomi_debug</li>
+<li>xiaomi_update</li>
+</ul>
+<h2 id="开始降级">开始降级</h2>
+<p>然后把 U 盘插入小米盒子，再进入设置-帐户与安全，你会看到多出一个 adb 选项。确保 adb 是关闭的，也就是说现在你的盒子是可以读取 U 盘内容的。OK，我们开始降级了。</p>
+<p>拔掉小米盒子电源，盒子插上U盘，按住遥控器的确认键和返回键的同时插上电源，直到出现机器人和升级条后松开。走完两次进度条之后，小盒子成功降级至1.3.106版本。</p>
+<h2 id="进行root">进行Root</h2>
+<p>移除 U 盘，开机，进入设置 - 帐户与安全 - adb调试 - 打开。此时盒子会重启。
+重启后把小米盒子用双头 USB 线连上电脑，不出意料此时你的电脑还没具备小米盒子的驱动。所以我们需要额外装一个安桌管理器来让它自动安装驱动。安卓机我用的不多，介于国产流氓太多怕被坑于是装了一个几年前用过一次的豌豆荚，成功识别后会自动下载驱动。这里注意的一点是：需要在小米盒子上点一下确认之类的操作，所以你需要在它连电脑的同时小米盒子也连着一个显示器。反正我在跪在电视机前完成的。</p>
+<p>KingoRoot 上场，安装包已经提供在上面，直接装好就行。有一个插曲：装好之后打开它不断的会自已升级，升级又升得死慢死慢。反正我是等不及，就关掉它，哪知道一打开又自动升级，如此不断的循环。所以我真的想问一下这些开发软件的人： 你们的脑袋里面装得都！是！屎！吗？是！屎！吗？屎！吗？ <strong>解决办法是打开 KingoRoot 的安装目录，把 updater.exe 删除掉或者重命名一下。</strong></p>
+<p>打开 KingoRoot，会显示你的设备已 Root？ 别管它，点击 Root Again。等进度条走完 Root 就完成了。此时小米盒子会出一个权限管理的 app 和一个电量管理的 app。权限管理的留着，电量管理的没啥用可以删除。如果没出现就表示 Root 失败，请从<strong>开始降级</strong>步骤重新开始。</p>
+<h2 id="rom-精减">Rom 精减</h2>
+<p>去广告，我们只要删除掉小米盒子内的广告 APP 就好了。 所以先安装一个 RE 文件管理器，打开时提示是否授权，选择是。然后就可以按照网上的精简列表开始精简了，有一个建议是：找到你不需要的程序，不要删除它，重命名为其他名称即可，比如****_old.apk，这样的话万一你失手删错了，还能重命名回来。</p>
+<p>提示一下，主要的广告程序在 system\Vendor.app 下面有个叫 MiTVAdvertise.apk 的程序。把它删除掉应该就可以去除掉大部分广告了。另外要注意的是：删除完之后，小米盒子会不断的弹出『很抱歉，******已经停止运行』，重启一下可破。</p>
+<hr>
+<p>第二天更新：
+发现就算是删除掉了 MiTVAdvertise.apk 程序，打开第三方 app 的时候还是会有广告。后来看论坛上的办法是安装一个“沙发管家”。给它一个超级权限,然后让沙发管家来控制小米盒子的启动。听起来还是有点不放心呢,在我印象中国产的这些管家软件都一个尿性。具体设置如下:</p>
+<ul>
+<li>关闭第三方APP广告:StandbyCover</li>
+<li>关闭待机广告:時尚画报</li>
+<li>关闭自动更新:系统更新</li>
+</ul>
+<p>偷一张图给大家看看:</p>
+<p><img src="/post_photo/5453bfe0934da74040d7416cce4fa55e.jpeg" alt=""></p>
+<p>至此，小米盒子 3 的 Root 就全部完成了。</p>
+<p>世界清净了。</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://www.dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.dlmao.com/posts/E59E57A0CA0F4099A85841EA7C92EF9E/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://www.dlmao.com/posts/E2AA4D2907474477BB5C6E13277CFE01/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

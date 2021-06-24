@@ -1,8 +1,0 @@
-title:见素珠宝
-subtitle:我们的设计团队顔值好高~~
-tag:brand
-filter:brand graphics
-client:青牛黄金珠宝有限公司
-tools:adobe illustrator, adobe photoshop
-date:2016-2017
-content:杭州青牛黄金珠宝有限公司，主营高级珠宝定制业务以及原创珠宝设计销售。公司融合了业内资深管理人员、宝玉石鉴定专家、设计师、雕刻师、技师等的专业团队三十余人。拥有独立的设计中心，签约多位国内外设计师。

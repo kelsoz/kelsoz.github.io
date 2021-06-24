@@ -1,9 +1,0 @@
-title:断桥
-subtitle:Creative by kelso
-tag:dribbble
-filter:ui_web
-client:kelso
-tools:ae,ai,ps
-date:2017-8-21
-content:关于断桥的其名由来，众说纷纭，一说孤山之路到此而断，故名；一说段家桥简称段桥，谐音为断桥；一说古石桥上建有亭，冬日雪霁，桥阳面冰雪消融，桥阴面仍然玉砌银铺，从葛岭远眺，桥与堤断之感，得名“断桥残雪”。
-我对它的印象.

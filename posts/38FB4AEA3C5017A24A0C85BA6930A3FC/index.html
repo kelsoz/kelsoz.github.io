@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>关于adobe的脚本自动化-续 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        关于adobe的脚本自动化-续</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                关于adobe的脚本自动化-续</h1>
+                <div class="stuff">
+                    
+                    <span>Wednesday, October 30, 2013</span>
+                    <span>字数 944</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p>几个月前我写过一篇有关于自动化的猜想与实现途径的<a href="http://dlmao.com/auto-adobe.html">文章</a>
+因为我个人极度厌恶一遍遍做重复的工作,  整理桌面堆满的小图标~  重命名一百个文件,每个案子结完之后都按同样的方式导图,  打开-转曲-栅格化-另存为低版本-下发&hellip;&hellip;  这种事情竟然要人为的一步步自己操作!  有比这种事情更浪费生命的么?    我很奇怪大家竟然没有为此而烦恼,好吧也许有烦恼过却拿它没有办法?   像各种攻城师求助?  好像四个月过去了也没有人搭理我.</p>
+<p>好吧, 那只有自己动手了. 先找解决方案, 因为我大部分时间用的是 apple 的机器, 所以暂定用 applescript 来解决.  第一步是把网上所有的中文教程找来看一篇,  但是所有的中文教程都只是一些入门啊简介啊什么的根本不得要领, 然后又去找英文版的书来翻顺便恶补下英文.</p>
+<p>废话不多说, 下面讲一讲如何实现自动化出稿, 可能大家步骤不一样但我的流程是在定稿以后我需要把源文件下发到甲方, 甲方再发到它们的经销商, 或者我们直接导出到印刷厂制作. 那么我要做的就是:</p>
+<ul>
+<li>自动判断一个文件夹里的所有文件(踢掉那些链接素材,只保留终稿)</li>
+<li>如果是 ai 文件,那么就打开- 解锁所有图层- 轮廓化所有文字- 栅格化所有图片- 另存为低版本 eps 并嵌入图片- 放到桌面统一的文件夹里</li>
+<li>如果是 ps, 直接复制到桌面统一文件夹</li>
+<li>完成后提示音</li>
+</ul>
+<p>但是有个问题是就是我一直不怎么懂 mac 的各种文件路径的用法, 这就导致了我都是手动把我的写进脚本里, 后果是: 换个用户名就需要手动修改路径.</p>
+<p>因为apple 自家的软件都支持 applescript 那么扩展的用法是: 对付垃圾短信!  因为每天都会收到垃圾短信, 我总结了一下, 虽然每次发垃圾短信的号码都不一样, 但是几乎都是从@9to6.cn 这个后缀发来的 , 还有就是以100000000000x 数字@gmail.com这个名字, 那么就很好办了, 只要我每次收到 imessage 就判断它是不是符合上面两个条件,  如果符合的话就把它的号码转发到 apple 的垃圾邮件服务器, 但是好像需要自动截图作为证据(这个还没完成). 为了解恨再每隔2秒回一个 fuck,  共重复回20次,不过这个方案只能在 mac 机上用.  我把这个脚本贴在下面, 需要的同学请把它放到/Users/<em>你的用户名</em>/Library/Application Scripts文件夹下, 并打开 message , 在-偏好设置-通用-applescript 处理程序 里选择这个文件.
+<a href="http://pan.baidu.com/s/1b0JvG">自动判断垃圾短信</a></p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://www.dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.dlmao.com/posts/840D4BE193B1F2795649C81CA06C49AF/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://www.dlmao.com/posts/C1A268B78DE94FF996659118C011799A/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

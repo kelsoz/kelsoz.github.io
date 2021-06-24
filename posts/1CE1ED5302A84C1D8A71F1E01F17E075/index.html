@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>WNDR4300 折腾openwrt记-终极修正版 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        WNDR4300 折腾openwrt记-终极修正版</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                WNDR4300 折腾openwrt记-终极修正版</h1>
+                <div class="stuff">
+                    
+                    <span>Friday, October 23, 2015</span>
+                    <span>字数 842</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p>好吧，之前写了好几篇教程与心得，发现还是有很多朋友觉得复杂，前些日子在某知名论坛发现了一个名为『石像鬼』的固件，感谢大神制作，发现这货刷完之后自带shadosocks，smba共享，多拨（黑科技，而且设置傻瓜，本座亲测成功），当然什么下载机啊，翻墙自动分流啊，ddns全部一应俱全。再次感谢！</p>
+<p>话不多说，好东西给大家分享。</p>
+<p><strong>第一步，下载固件了</strong></p>
+<p>已经给大家准备好了，自行下载。<a href="http://pan.baidu.com/s/1o6L7aBK">百度盘链接</a> 密码: 92xi
+链接又被百度吃掉了.已更新&hellip;</p>
+<p><strong>第二步，路由 tftp 刷机</strong></p>
+<ol>
+<li>首先使用网线连接路由器的LAN口 和 PC的网口</li>
+<li>路由器断电，用牙签或其他工具，捅路由器的reset口。</li>
+<li>开启设备电源开关，观察电源灯（此时保持按住Restore Factory Settings按钮不要松手），直到电源灯由橙色闪烁状态变到绿色闪烁状态（说明设备已经进入到了TFTP修复模式）</li>
+<li>在win下面使用DOS命令，即： tftp -i 192.168.1.1 put 文件名.img</li>
+<li>在mac下面，同样也是使用tftp命令。</li>
+</ol>
+<pre><code>1.自己的ip改成192.168.1.10，网关即路由ip 192.168.1.1
+2.把 下好的 img  固件放到用户文件夹下
+3.打开终端，输入(binary的作用是改为二进制模式)&gt;tftp&gt;connect 192.168.1.1&gt;binary&gt;put 文件名.img完了之后路由器会闪灯后自动重启。
+</code></pre><ol start="6">
+<li>文件传送完毕后，等待80秒左右，设备会自动重启（请耐心等待，切勿将路由器手动断电）。至此，TFTP修复完成。</li>
+<li>设备重启后，可手动断电，再重启。否则可能没有5G。这不是BUG，其他openwrt也是一样的</li>
+<li>如果恢复过程中断或失败，重复上述步骤再做尝试。</li>
+</ol>
+<p><strong>第三步，openwrt初始设置</strong></p>
+<p>1、刷机成功后，访问LUCI后台地址 http://192.168.1.1:8081 ，登录的时候，输入用户名root，密码password
+2、从 LUCI菜单中 ，找到 [系统] — [一键设置]。
+3、把自己的宽带帐号shaodwsocks信息等填好
+4、[一键设置] 设置完成并保存后， 到[系统]–[快捷命令]–点击运行 [一键设置(luci)]请重启路由器。</p>
+<p><strong>第四步，没有了。</strong></p>
+<p>记得手动修改密码，一键设置里的修改密码好像没用。</p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://www.dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.dlmao.com/posts/CCB8A4FC0E544EB3B4E2CCED1832D21E/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://www.dlmao.com/posts/BC6BE49928DB41F3BDAC3B8A8FBE2812/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+

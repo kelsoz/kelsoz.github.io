@@ -1,9 +1,0 @@
-title:堂本餐厅
-subtitle:喔,又是一家特色餐厅
-tag:Brand Logo
-filter:logo_fonts brand
-client:杭州堂巢餐饮管理有限公司
-tools:adobe photoshop, adobe illustrator
-date:2016-10-14
-content: 一家文艺的特色餐厅. 地址在中山南路,附近的朋友可以去体验下. 
-报我的名字也不会打折的.

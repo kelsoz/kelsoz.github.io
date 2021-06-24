@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <title>WNDR4300-openwrt 之shadowsocks 配置 &middot; 大脸猫</title>
+  <meta name="keywords" content="kelso, inspiration, customization, rainmeter, design, web, 壁纸, 设计, 收集, wallpaper, collection, jaku, icon">
+  <meta name="description" content="kelso写字的地方">
+  <meta name="author" content="kelso">
+  <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="/css/diaspora.css">
+  <link rel="stylesheet" href="/css/insight.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head><body class="loading">
+        <div id="loading"></div>
+				<div id="nav"></div>
+				<div class="nav-user"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+        <div class="bar">
+        </div>
+        <a class="icon-icon" href="javascript:history.back()">
+        </a>
+        <div title="播放/暂停" class="icon-play">
+        </div>
+        
+        <h3 class="subtitle" style="display: none;">
+        WNDR4300-openwrt 之shadowsocks 配置</h3>
+        <div class="social">
+            <div>
+                <div class="share">
+                    <a title="获取二维码" class="icon-wechat" href="javascript:;"></a>
+                </div>
+                <div id="qr"></div>
+            </div>
+        </div>
+        <div class="scrollbar" style="width: 1.1636%;"></div>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div>
+                <h1 class="title">
+                WNDR4300-openwrt 之shadowsocks 配置</h1>
+                <div class="stuff">
+                    
+                    <span>Thursday, October 30, 2014</span>
+                    <span>字数 1529</span>
+                    
+                    
+                </div>
+                <div class="content">
+                    <p>翻X应该是每个天朝人必备技能。废话不多说，在路由器上部署shadowsocks可以方便的让连接到路由的所有设备统一翻X，尤其适用于iphone和ipad设备——它们不越狱的话几乎没有办法实现智能翻。</p>
+<p>网上有很多相关教程，大多数是由shadowsocks + chinadns + iptable 或者之类的方案，但是我在跟着大神们的设置的时候不知是出了什么问题，总是连接不稳定，时常连正常的网也上不去。我想可能是路由的性有限，把翻X和智能分流的工作都放在路由上会让它过载之类的，但是我也是个菜鸟，没有去深究到底是哪一步出现问题。</p>
+<p>总之我后来找到了一个方案：路由器上运行shadowsocks，然后自动分发pac文件让每个客户端自己运行智能分流。这样的话负载就分布到了每个设备上，路由只要运行shadowsocks就好，而且由于pac文件放在路由器上，所以更新起来各终端也会自动更新。下面我讲一下具体实现细节。</p>
+<hr>
+<p><strong>第一步</strong></p>
+<p>装shadowsocks。从<a href="http://shadowsocks.org/en/index.html">这里</a>下载ipk安装包（好像被墙了？无法下载的同学我在文末打包一份放到百度盘里大家自行下载）放到路由器的/tmp文件夹里，然后</p>
+<pre><code>cd /tmp
+opkg update
+opkg install  [shadowsocks文件名]
+</code></pre><p>安装的同时如果有依赖包没有装的话会自动装上。这一步应该很简单，大家如果遇到问题百度一下应该都能轻松解决。装好了之后配置文件应该在/etc/shadowsocks.json，我习惯有ftp文件管理来修改它，打开之后内容如下：</p>
+<pre><code>{
+    &quot;server”:”这里填帐号ip”,
+    &quot;server_port”:”远程端口”,
+    &quot;local_port”:”本地端口，我一般填1080”,
+    &quot;password”:”密码”,
+    &quot;timeout&quot;:&quot;600&quot;,
+    &quot;method&quot;: “加密方式　“
+}
+</code></pre><p>换成你自己的就ok 了，然后让它开机启动：</p>
+<pre><code>/etc/init.d/shadowsocks enable
+</code></pre><p>手动运行：</p>
+<pre><code>ss-local -c /etc/shadowsocks.json
+</code></pre><p>此时，第一步已经完成，这个时候你用chrome把代理调成192.168.1.1:1080就应该可以科学上网了。</p>
+<hr>
+<p><strong>第二步</strong></p>
+<p>把socks代理转成http代理。为什么要转？因为iphone好像不能使用socks代理（后来发现实是默认就支持的，这一步可以跳过），我们需要安装一个名为 privoxy  的包，很简单：</p>
+<pre><code>opkg install privoxy
+</code></pre><p>完成！完成后我们要修改 /etc/privoxy/config ，假设监听端口为默认的 8118 。修改 listen-address 为 0.0.0.0:8118，其它默认，在文件结尾添加如下配置</p>
+<pre><code>forward-socks5 / 127.0.0.1:1080 .                            
+forward 192.168.*.*/ .                                       
+forward 10.*.*.*/ .                                          
+forward 127.*.*.*/ .                                         
+forward localhost/ .
+</code></pre><p>启动 privoxy</p>
+<pre><code>/etc/init.d/privoxy start
+/etc/init.d/privoxy enable
+</code></pre><p>第二步完成！</p>
+<hr>
+<p><strong>第三步</strong></p>
+<p>由路由把PAC文件自动发给各下家。首先你得有个PAC文件（废话），把PAC文件里的proxy信息改成 socks5 192.168.1.1:1080或者PROXY 192.168.1.1:8118,前者是shadowsocks的scoks5代理端口，后者是privoxy的http代理方式端口。如果有不会改的同学我同样也把这个文件打包放到文章尾，自己下载后注意把var httpProxy 这一行改成你自己的信息。</p>
+<p>然后把pac文件重命名为proxy.pac（其实随便你叫什么名都行，下面记得自己改成你的名字就好了），放到路由的/www文件夹下，我们利用 WPAD 协议自动分发 PAC。</p>
+<p>修改 /etc/config/dhcp 在 config dnsmasq 选项下面增加配置</p>
+<pre><code>list dhcp_option '252,http://192.168.1.1/proxy.pac'
+</code></pre><p>保存，重启 dnsmasq。</p>
+<pre><code>/etc/init.d/dnsmasq restart
+</code></pre><p>然后，设置一下权限，让其他机器可以访问这个文件，</p>
+<pre><code>cd /www
+chmod +x proxy.pac
+</code></pre><p>至此，在路由器上所有的操作已完成。</p>
+<hr>
+<p><strong>第四步</strong></p>
+<p>各终端的配置（mac，iphone，ipad，pc）。
+水果家的设备很简单，iOS只要在wifi设置的详细界面里把http代理选为『自动』地址为空就可以了。mac的话在『网络设置』-『高级』-『代理』里设置为自动发现代理。完成。
+pc的话麻烦一点，在ie的 连接、局域网设置为自动检测代理。
+安卓的话—-没有用守安卓机，自己去找找应该也有相关设置。</p>
+<hr>
+<p>好吧，所有的步骤都完成了。你们要的文件都打包在此：<a href="https://www.dropbox.com/s/broog0q15kp25dc/%E7%BF%BB%E5%A2%99.zip?dl=0">dropbox</a></p>
+
+                    
+                    <audio id="audio" loop="1" preload="auto" style="width: 100%;" controls="controls">
+                        <source type="audio/mpeg" src="">
+                        <a href=""></a>
+                    </audio>
+                </div>
+                <div class="comment-wrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relate">
+        <ul>
+            <h3 id="prev_next">
+                <a href="https://www.dlmao.com/archives/">文 章 目 录</a>
+                
+                <span>
+                    <a href="javascript: window.scrollTo(0, 0);">
+                    返回顶部</a>
+                    
+                        <a href="https://www.dlmao.com/posts/C2266BF672D64528A8F5077906D80FAE/" rel="prev">上一篇</a>
+                    
+                    
+                        <a href="https://www.dlmao.com/posts/EBBBA12850AC4427A98DCF62724E8954/" rel="next">下一篇</a>
+                    
+                </span>
+            </h3>
+            
+            
+            
+        </ul>
+    </div>
+</div>
+<p style="text-align: center;">
+  <a style="color: inherit" target="_blank" href="https://dlmao.com"></a>
+</p>
+
+<script>
+  var siteTitle = "大脸猫";
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/InsightSearch.js"></script>
+</body>
+</html>
+
