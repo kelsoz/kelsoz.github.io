@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>关于 on 大脸猫</title>
-    <link>http://dlmao.com/about/</link>
+    <link>https://www.dlmao.com/about/</link>
     <description>Recent content in 关于 on 大脸猫</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 20 Apr 2019 23:08:32 +0800</lastBuildDate>
     
-	<atom:link href="http://dlmao.com/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.dlmao.com/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
